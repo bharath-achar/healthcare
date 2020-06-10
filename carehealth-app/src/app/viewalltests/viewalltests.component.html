@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Healthcare Management System</title>
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body>
+  <div class="table-title">
+    <h3>Healthcare</h3>
+    <div class="md-form mt-0">
+      <input type="search" name="search" class="form-control" [(ngModel)]='search' placeholder="Enter Test Name">
+    </div>
+
+  </div>
+  <table class="table-fill">
+    <thead>
+      <tr>
+        <th class="text-left">Test ID</th>
+        <th class="text-left">Test Name</th>
+        <th colspan="3" class="text-left">More Options</th>
+
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      <tr *ngFor="let test of adminService.tests | filterTest:search">
+        <td class="text-left">{{test.testId}}</td>
+        <td class="text-left">{{test.testName}}</td>
+        <td class="text-left"><button type="button" class="btn btn-outline-warning" (click)="delete(test)">
+            Delete
+          </button></td>
+      </tr>
+    </tbody>
+    <button class="btn btn-success float-left" type="button" routerLink="/adminhome">Back</button>
+  </table>
+
+
+</body>

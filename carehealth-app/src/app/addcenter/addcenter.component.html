@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Health Center</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form_main">
+                    <h4 class="heading"><strong>Add </strong> Center <span></span></h4>
+                    <div class="form">
+                        <form #centerForm="ngForm" (ngSubmit)="addCenter(centerForm)" id="contactFrm" name="contactFrm">
+                            <input type="text" #centerName="ngModel" ngModel id="centerName" name="centerName"
+                                class="form-control" placeholder="Please Enter the Center Name" required class="txt">
+                            <input type="text" class="form-control" placeholder="Please Enter the city">
+                            <input type="text" placeholder="Please Enter the pincode" class="txt">
+
+                            <textarea placeholder="Center Description" name="mess" type="text" class="txt_3"></textarea>
+                            <input type="submit" [disabled]='centerForm.invalid' value="submit" name="submit" class="txt2 float-right">
+                            <button type="button" class="btn btn-outline-info btn-rounded waves-effect txt_3" routerLink="/adminhome">Back</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

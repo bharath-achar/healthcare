@@ -1,0 +1,14 @@
+<form class=" col-md-4 offset-md-4 card card-body mt-4" #setstatus="ngForm"
+  (ngSubmit)="setAppointmentStatus(setStatus)">
+  <div class="form-group">
+    <label for="appointmentId">Appointment ID</label>
+    <input type="number" class="form-control" name="appointmentId" #appointmentId="ngModel" ngModel required>
+    <div *ngIf="appointmentId.touched && appointmentId.invalid">
+      <p class="alert alert-danger"> *This field is required</p>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary float-left" [disabled]="setStatus.invalid">Approve</button>
+  <button class="btn btn-primary float-left mt-4" type="button" routerLink="/adminhome">Back</button>
+
+</form>
